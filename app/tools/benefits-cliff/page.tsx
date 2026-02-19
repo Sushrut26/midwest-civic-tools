@@ -13,12 +13,29 @@ export const metadata: Metadata = {
     'SNAP benefits cliff 2026',
   ],
   alternates: {
-    canonical: 'https://midwestcivictools.app/tools/benefits-cliff',
+    canonical: 'https://civic-tools.com/tools/benefits-cliff',
   },
   openGraph: {
+    type: 'website',
+    siteName: 'Midwest Civic Tools',
+    locale: 'en_US',
     title: 'Indiana Benefits Cliff Calculator 2026',
     description: 'See exactly where your Indiana SNAP and childcare subsidies cut off.',
-    url: 'https://midwestcivictools.app/tools/benefits-cliff',
+    url: 'https://civic-tools.com/tools/benefits-cliff',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Indiana Benefits Cliff Calculator',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Indiana Benefits Cliff Calculator 2026',
+    description: 'Visualize where Indiana SNAP and childcare support drops off as income rises.',
+    images: ['/og-image.svg'],
   },
 };
 
@@ -27,7 +44,7 @@ export default function BenefitsCliffPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Indiana Benefits Cliff Calculator',
-    url: 'https://midwestcivictools.app/tools/benefits-cliff',
+    url: 'https://civic-tools.com/tools/benefits-cliff',
     description:
       'Visualize where Indiana SNAP and childcare subsidies cut off based on income and household size.',
     applicationCategory: 'FinanceApplication',

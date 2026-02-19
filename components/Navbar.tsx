@@ -45,6 +45,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
+            type="button"
             className="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}

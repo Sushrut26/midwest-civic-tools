@@ -20,6 +20,7 @@ export default function Accordion({ items, className = '' }: AccordionProps) {
       {items.map((item, i) => (
         <div key={i} className="bg-white">
           <button
+            type="button"
             className="w-full flex items-center justify-between px-5 py-4 text-left text-sm font-semibold text-gray-800 hover:bg-gray-50 transition-colors"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             aria-expanded={openIndex === i}

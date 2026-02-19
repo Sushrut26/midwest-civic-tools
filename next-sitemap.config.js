@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://midwestcivictools.app',
+  siteUrl: process.env.SITE_URL || 'https://civic-tools.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   robotsTxtOptions: {

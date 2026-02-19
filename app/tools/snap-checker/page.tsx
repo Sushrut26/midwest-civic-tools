@@ -13,12 +13,29 @@ export const metadata: Metadata = {
     'SNAP sugary drinks Indiana',
   ],
   alternates: {
-    canonical: 'https://midwestcivictools.app/tools/snap-checker',
+    canonical: 'https://civic-tools.com/tools/snap-checker',
   },
   openGraph: {
+    type: 'website',
+    siteName: 'Midwest Civic Tools',
+    locale: 'en_US',
     title: 'Indiana SNAP Eligibility Checker 2026',
     description: 'Instantly check if a grocery item is SNAP eligible under Indiana\'s 2026 waiver.',
-    url: 'https://midwestcivictools.app/tools/snap-checker',
+    url: 'https://civic-tools.com/tools/snap-checker',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Indiana SNAP Eligibility Checker',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Indiana SNAP Eligibility Checker 2026',
+    description: 'Search grocery items and check Indiana SNAP eligibility under 2026 waiver rules.',
+    images: ['/og-image.svg'],
   },
 };
 
@@ -27,7 +44,7 @@ export default function SNAPCheckerPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Indiana SNAP Eligibility Checker',
-    url: 'https://midwestcivictools.app/tools/snap-checker',
+    url: 'https://civic-tools.com/tools/snap-checker',
     description:
       'Check SNAP eligibility for food items under Indiana\'s 2026 SNAP waiver rules.',
     applicationCategory: 'LifestyleApplication',

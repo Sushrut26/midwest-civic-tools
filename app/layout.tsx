@@ -8,7 +8,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 function getMetadataBase(): URL {
-  const fallback = 'https://midwestcivictools.app';
+  const fallback = 'https://civic-tools.com';
   const rawSiteUrl = process.env.SITE_URL?.trim();
 
   if (!rawSiteUrl) return new URL(fallback);
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://midwestcivictools.app',
+    url: 'https://civic-tools.com',
     siteName: 'Midwest Civic Tools',
     title: 'Midwest Civic Tools — Free Indiana & Midwest Tools for 2026',
     description:
@@ -89,13 +89,13 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Midwest Civic Tools',
-    url: 'https://midwestcivictools.app',
+    url: 'https://civic-tools.com',
     description:
       'Free civic tools for Indiana and Midwest residents. SNAP eligibility, school vouchers, benefits cliff, minimum wage timeline, and data privacy rights.',
     publisher: {
       '@type': 'Organization',
       name: 'Midwest Civic Tools',
-      url: 'https://midwestcivictools.app',
+      url: 'https://civic-tools.com',
     },
   };
 
@@ -107,7 +107,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      <body className={`${inter.className} bg-[#f9fafb] text-gray-900 antialiased`}>
+      <body className={`${inter.className} bg-[#f9fafb] text-gray-900 antialiased`} suppressHydrationWarning>
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />

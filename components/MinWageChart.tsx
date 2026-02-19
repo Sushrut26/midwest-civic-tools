@@ -28,11 +28,15 @@ const YEARS = [2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031];
 export default function MinWageChart({ selectedStates, showTipped }: Props) {
   // Build datasets
   const datasets: ChartData<'line'>['datasets'] = [];
+  const visibleValues: number[] = [];
 
   WAGE_DATA.filter((s) => selectedStates.includes(s.state)).forEach((stateData: StateWageData) => {
     const wages = YEARS.map((yr) => {
       const dp = stateData.data.find((d) => d.year === yr);
       return dp ? dp.standard : null;
+    });
+    wages.forEach((value) => {
+      if (typeof value === 'number') visibleValues.push(value);
     });
 
     datasets.push({
@@ -50,6 +54,9 @@ export default function MinWageChart({ selectedStates, showTipped }: Props) {
       const tippedWages = YEARS.map((yr) => {
         const dp = stateData.data.find((d) => d.year === yr);
         return dp ? dp.tipped : null;
+      });
+      tippedWages.forEach((value) => {
+        if (typeof value === 'number') visibleValues.push(value);
       });
 
       datasets.push({
@@ -70,6 +77,11 @@ export default function MinWageChart({ selectedStates, showTipped }: Props) {
     labels: YEARS.map(String),
     datasets,
   };
+
+  const minValue = visibleValues.length > 0 ? Math.min(...visibleValues) : 0;
+  const maxValue = visibleValues.length > 0 ? Math.max(...visibleValues) : 20;
+  const yMin = Math.max(0, Math.floor(minValue - 1));
+  const yMax = Math.ceil(maxValue + 1);
 
   const options: ChartOptions<'line'> = {
     responsive: true,
@@ -111,8 +123,8 @@ export default function MinWageChart({ selectedStates, showTipped }: Props) {
         // currentYear used for tooltip context above
       },
       y: {
-        min: 8,
-        max: 19,
+        min: yMin,
+        max: yMax,
         ticks: {
           font: { size: 12 },
           callback: (val) => `$${val}`,

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://midwestcivictools.app
+Host: https://civic-tools.com
 
 # Sitemaps
-Sitemap: https://midwestcivictools.app/sitemap.xml
+Sitemap: https://civic-tools.com/sitemap.xml

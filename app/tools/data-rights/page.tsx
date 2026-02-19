@@ -14,12 +14,29 @@ export const metadata: Metadata = {
     'Indiana data privacy letter',
   ],
   alternates: {
-    canonical: 'https://midwestcivictools.app/tools/data-rights',
+    canonical: 'https://civic-tools.com/tools/data-rights',
   },
   openGraph: {
+    type: 'website',
+    siteName: 'Midwest Civic Tools',
+    locale: 'en_US',
     title: 'Indiana ICDPA Data Rights Letter Generator 2026',
     description: 'Generate a free letter to exercise your Indiana data privacy rights. No account needed.',
-    url: 'https://midwestcivictools.app/tools/data-rights',
+    url: 'https://civic-tools.com/tools/data-rights',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Indiana ICDPA Data Rights Letter Generator',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Indiana ICDPA Data Rights Letter Generator 2026',
+    description: 'Generate request letters for access, delete, correction, portability, or opt-out rights.',
+    images: ['/og-image.svg'],
   },
 };
 
@@ -28,7 +45,7 @@ export default function DataRightsPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Indiana ICDPA Data Rights Letter Generator',
-    url: 'https://midwestcivictools.app/tools/data-rights',
+    url: 'https://civic-tools.com/tools/data-rights',
     description:
       'Generate professionally formatted letters to exercise Indiana Consumer Data Protection Act rights.',
     applicationCategory: 'LegalApplication',

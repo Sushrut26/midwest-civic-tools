@@ -5,8 +5,40 @@ export const metadata: Metadata = {
   title: 'Midwest Civic Tools — Free Indiana & Midwest Tools for 2026',
   description:
     'Free calculators and guides for Indiana SNAP rules, Choice Scholarships, Benefits Cliff, Minimum Wage changes, and Data Privacy rights. Updated for 2026.',
+  keywords: [
+    'Indiana civic tools',
+    'Indiana SNAP eligibility checker',
+    'Indiana benefits cliff calculator',
+    'Indiana Choice Scholarship calculator',
+    'Indiana data rights letter generator',
+    'Midwest minimum wage timeline',
+  ],
   alternates: {
-    canonical: 'https://midwestcivictools.app',
+    canonical: 'https://civic-tools.com',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Midwest Civic Tools',
+    locale: 'en_US',
+    title: 'Midwest Civic Tools — Free Indiana & Midwest Tools for 2026',
+    description:
+      'Five free tools for Indiana residents: SNAP checker, benefits cliff visualizer, scholarship calculator, minimum wage timeline, and ICDPA data rights letters.',
+    url: 'https://civic-tools.com',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Midwest Civic Tools',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Midwest Civic Tools — Free Indiana & Midwest Tools',
+    description:
+      'SNAP, benefits cliff, school scholarships, minimum wage, and data rights tools for Indiana residents.',
+    images: ['/og-image.svg'],
   },
 };
 
@@ -46,10 +78,10 @@ const TOOLS = [
     icon: '💵',
     title: 'Minimum Wage Timeline',
     description:
-      'Interactive chart of Michigan, Illinois, and Ohio minimum wage schedules through 2031, including tipped wage schedules.',
+      'Interactive chart of Indiana, Michigan, Illinois, and Ohio minimum wage schedules through 2031, including tipped wage schedules.',
     href: '/tools/min-wage',
     updated: 'Updated for 2026',
-    tags: ['Michigan', 'Illinois', 'Ohio'],
+    tags: ['Indiana', 'Michigan', 'Illinois', 'Ohio'],
   },
   {
     id: 'data-rights',

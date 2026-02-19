@@ -13,7 +13,7 @@ Built with Next.js 15 and deployed on Vercel. All data is hardcoded or computed 
 | Benefits Cliff Visualizer | `/tools/benefits-cliff` | Indiana SNAP & childcare subsidy cliffs by income/household size |
 | SNAP Eligibility Checker | `/tools/snap-checker` | 150+ items checked against Indiana's 2026 Smart SNAP rules |
 | Choice Scholarship Calculator | `/tools/scholarship-calc` | Estimate Indiana voucher award for all 92 counties |
-| Minimum Wage Timeline | `/tools/min-wage` | Michigan, Illinois, Ohio wage schedules 2023–2031 |
+| Minimum Wage Timeline | `/tools/min-wage` | Indiana, Michigan, Illinois, Ohio wage schedules 2023–2031 |
 | Data Rights Letter Generator | `/tools/data-rights` | ICDPA (IC 24-15) letter templates for 5 data rights |
 
 ---
@@ -32,7 +32,24 @@ npm run build
 
 # Start production server locally
 npm start
+
+# Install Playwright browser runtime (one time)
+npm run test:e2e:install
+
+# Run end-to-end tests
+npm run test:e2e
 ```
+
+---
+
+## End-to-End Testing
+
+Playwright tests cover:
+- Core page navigation and route health
+- Tool-level key user actions
+- Security headers on responses
+
+Tests live in `tests/e2e/`.
 
 ---
 
@@ -53,6 +70,48 @@ Set the `SITE_URL` environment variable in your Vercel project settings:
 SITE_URL=https://yourdomain.com
 ```
 
+For Sentry (free tier compatible), set these environment variables in Vercel:
+```
+NEXT_PUBLIC_SENTRY_DSN=...
+NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE=0.1
+NEXT_PUBLIC_SENTRY_REPLAY_SESSION_SAMPLE_RATE=0.0
+NEXT_PUBLIC_SENTRY_REPLAY_ON_ERROR_SAMPLE_RATE=0.1
+SENTRY_ENVIRONMENT=production
+SENTRY_RELEASE=
+```
+
+Optional (only if uploading source maps to Sentry):
+```
+SENTRY_AUTH_TOKEN=...
+SENTRY_ORG=...
+SENTRY_PROJECT=...
+```
+
+---
+
+## Monitoring
+
+The app is wired for Sentry on client, server, and edge runtimes using:
+- `instrumentation.ts`
+- `instrumentation-client.ts`
+- `sentry.server.config.js`
+- `sentry.edge.config.js`
+- `app/global-error.tsx`
+
+If `NEXT_PUBLIC_SENTRY_DSN` is unset, Sentry remains disabled.
+
+---
+
+## Security Hardening
+
+Configured protections include:
+- Strict security headers (`HSTS`, `CSP`, `X-Frame-Options`, `Permissions-Policy`, `COOP`, `CORP`, etc.)
+- `X-Powered-By` disabled
+- No server-side database/API attack surface in this app architecture
+- E2E assertions that validate key headers remain present
+
+No web app is truly "attack-proof", but this setup is hardened for a static Next.js/Vercel deployment.
+
 ---
 
 ## How to Update Data
@@ -64,7 +123,7 @@ All hardcoded data lives in the `/data` folder:
 | `data/benefits-cliff.ts` | FPL monthly amounts, SNAP max benefits, childcare subsidy value |
 | `data/snap-items.ts` | 150+ SNAP items with eligibility status and notes |
 | `data/scholarship.ts` | All 92 Indiana counties and school corporations with per-pupil funding |
-| `data/min-wage.ts` | Michigan, Illinois, Ohio wage schedules through 2031 |
+| `data/min-wage.ts` | Indiana, Michigan, Illinois, Ohio wage schedules through 2031 |
 | `data/data-rights.ts` | ICDPA rights descriptions and letter templates |
 
 When federal or state data changes (e.g., new FPL figures, updated SNAP benefit amounts):
@@ -137,5 +196,3 @@ Data corrections are especially welcome. Please cite your source (USDA, Indiana 
 ## License
 
 MIT License. Free to use, modify, and distribute.
-
-*Built with Claude Code. Not affiliated with any government agency.*
