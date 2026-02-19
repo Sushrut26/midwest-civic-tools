@@ -14,7 +14,8 @@ const FAQ_ITEMS = [
       <p>
         Indiana previously limited Choice Scholarships to families below a certain income threshold (185%–400% of
         the free/reduced lunch income limit). Under HEA 1001-2025, the income cap is scheduled to be removed
-        beginning <strong>June 29, 2026</strong>. Verify current requirements and timing at indianascholarships.org
+        beginning <strong>June 29, 2026</strong>. Verify current requirements and timing at the Indiana DOE Choice
+        Scholarship page
         before applying.
       </p>
     ),
@@ -96,6 +97,7 @@ export default function ScholarshipClient() {
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
           Indiana Choice Scholarship Calculator
         </h1>
+        <p className="text-xs text-gray-400 mt-1">Last verified: February 2026</p>
       </div>
 
       {/* Universal eligibility banner */}
@@ -106,8 +108,8 @@ export default function ScholarshipClient() {
           <p className="text-green-700 text-sm">
             Indiana HEA 1001-2025 schedules removal of Choice Scholarship income limits beginning
             June 29, 2026. Confirm current eligibility and deadlines at{' '}
-            <a href="https://indianascholarships.org" target="_blank" rel="noopener noreferrer" className="underline">
-              indianascholarships.org
+            <a href="https://www.in.gov/doe/students/indiana-choice-scholarship-program/" target="_blank" rel="noopener noreferrer" className="underline">
+              in.gov/doe/students/indiana-choice-scholarship-program
             </a>
           </p>
         </div>
@@ -217,8 +219,8 @@ export default function ScholarshipClient() {
               <p className="text-xs text-blue-700">
                 Estimated annual scholarship: <strong>${scholarshipAmount.toLocaleString()}/year per student</strong>.
                 Apply at{' '}
-                <a href="https://indianascholarships.org" target="_blank" rel="noopener noreferrer" className="underline">
-                  indianascholarships.org
+                <a href="https://www.in.gov/doe/students/indiana-choice-scholarship-program/" target="_blank" rel="noopener noreferrer" className="underline">
+                  in.gov/doe/students/indiana-choice-scholarship-program
                 </a>{' '}
                 and check the official application calendar.
               </p>

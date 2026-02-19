@@ -40,6 +40,7 @@ export default function SNAPCheckerClient() {
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
           Indiana SNAP Eligibility Checker (2026)
         </h1>
+        <p className="text-xs text-gray-400 mt-1">Last verified: February 2026 · Always confirm at checkout — retailer POS systems may differ.</p>
       </div>
 
       {/* Alert banner */}
@@ -96,6 +97,7 @@ export default function SNAPCheckerClient() {
         {(['All', 'eligible', 'not-eligible', 'check-label'] as const).map((s) => (
           <button
             key={s}
+            type="button"
             onClick={() => setStatusFilter(s as FilterStatus)}
             className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
               statusFilter === s
@@ -117,6 +119,7 @@ export default function SNAPCheckerClient() {
         {CATEGORY_FILTERS.map((cat) => (
           <button
             key={cat}
+            type="button"
             onClick={() => setCategoryFilter(cat)}
             className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
               categoryFilter === cat
@@ -155,6 +158,7 @@ export default function SNAPCheckerClient() {
                   <Badge variant="state">{item.category}</Badge>
                 </div>
                 <p className="text-xs text-gray-500 mt-1">{item.reason}</p>
+                <p className="text-xs text-gray-400 mt-1">Confirm at checkout — POS systems may differ.</p>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
                 <Badge
@@ -174,6 +178,7 @@ export default function SNAPCheckerClient() {
                 </Badge>
                 {item.notes && (
                   <button
+                    type="button"
                     onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
                     className="text-gray-400 hover:text-gray-600 p-1 rounded"
                     aria-label={expandedId === item.id ? 'Collapse details' : 'Expand details'}

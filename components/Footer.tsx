@@ -36,7 +36,7 @@ export default function Footer() {
           </p>
           <p>
             <strong>AI-generated content.</strong> The data, calculations, and text on this site were compiled with
-            the assistance of AI tools (including Claude by Anthropic). While we have made reasonable efforts to
+            the assistance of AI tools. While we have made reasonable efforts to
             verify accuracy against primary government sources, AI-generated content can contain errors, omissions,
             or outdated information. Use at your own risk.
           </p>
@@ -73,7 +73,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
-          © {new Date().getFullYear()} Midwest Civic Tools. MIT License. Open source.
+          <p>© {new Date().getFullYear()} Midwest Civic Tools. MIT License. Open source.</p>
+          <p className="mt-1">
+            <a href="/disclaimer" className="underline hover:text-gray-600 transition-colors">Full Disclaimer</a>
+          </p>
         </div>
       </div>
     </footer>

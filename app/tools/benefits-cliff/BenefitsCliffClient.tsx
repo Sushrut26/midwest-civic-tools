@@ -95,6 +95,7 @@ export default function BenefitsCliffClient() {
         <p className="text-gray-600 text-lg">
           A small raise can cost you more than you gain. See exactly where your benefits cut off.
         </p>
+        <p className="text-xs text-gray-400 mt-2">Last verified: February 2026</p>
       </div>
 
       {/* Inputs */}

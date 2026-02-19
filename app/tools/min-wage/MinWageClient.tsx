@@ -72,6 +72,7 @@ export default function MinWageClient() {
         <p className="text-gray-600">
           Indiana, Michigan, Illinois, and Ohio wage schedules including tipped wage schedules. Data through 2031.
         </p>
+        <p className="text-xs text-gray-400 mt-2">Last verified: February 2026</p>
       </div>
 
       {/* Currently in effect */}
@@ -114,6 +115,7 @@ export default function MinWageClient() {
               return (
                 <button
                   key={state}
+                  type="button"
                   onClick={() => toggleState(state)}
                   className={`px-4 py-2 rounded-full text-sm font-semibold border transition-colors ${
                     active ? 'text-white border-transparent' : 'text-gray-600 border-gray-200 bg-white hover:bg-gray-50'
@@ -131,6 +133,7 @@ export default function MinWageClient() {
           <div className="flex items-center gap-2 ml-auto">
             <span className="text-sm text-gray-600">Show tipped wages</span>
             <button
+              type="button"
               role="switch"
               aria-checked={showTipped}
               onClick={() => setShowTipped(!showTipped)}

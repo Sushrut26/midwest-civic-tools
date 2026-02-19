@@ -133,6 +133,7 @@ export default function DataRightsClient() {
         <p className="text-gray-600">
           Exercise your rights under the Indiana Consumer Data Protection Act (ICDPA) — IC 24-15.
         </p>
+        <p className="text-xs text-gray-400 mt-2">Last verified: February 2026</p>
       </div>
 
       {/* ICDPA notice */}
@@ -300,6 +301,7 @@ export default function DataRightsClient() {
 
         {/* Generate button */}
         <button
+          type="button"
           onClick={handleGenerate}
           disabled={!canGenerate}
           className="w-full bg-[#1a56db] text-white rounded-xl px-6 py-3 font-bold text-sm hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
@@ -321,6 +323,7 @@ export default function DataRightsClient() {
             <h2 className="font-bold text-gray-800 text-lg">Your Letter</h2>
             <div className="flex gap-2">
               <button
+                type="button"
                 onClick={handleCopy}
                 className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 aria-label="Copy letter to clipboard"
@@ -342,6 +345,7 @@ export default function DataRightsClient() {
                 )}
               </button>
               <button
+                type="button"
                 onClick={handleDownload}
                 className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#1a56db] text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
                 aria-label="Download letter as text file"
