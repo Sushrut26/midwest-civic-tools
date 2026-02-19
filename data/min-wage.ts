@@ -1,13 +1,29 @@
 import type { StateWageData } from '@/types';
 
 // Midwest Minimum Wage Data 2023-2031
-// Sources: Michigan LEO, Illinois DOL, Ohio BWC
+// Sources: Michigan LEO, Illinois DOL, Ohio BWC, U.S. DOL (federal/Indiana)
 // Note: Values after confirmed agency announcements are estimates.
 // Michigan tip-credit percentages after 2026 follow FAQ guidance and use projected CPI-adjusted standard rates.
 // Illinois values after 2026 assume no new statutory change.
 // Ohio values are updated annually per CPI each January.
+// Indiana has no state minimum wage law above the federal floor; it follows the federal rate of $7.25/hr (unchanged since 2009).
 
 export const WAGE_DATA: StateWageData[] = [
+  {
+    state: 'Indiana',
+    color: '#ff5a1f', // orange
+    data: [
+      { year: 2023, date: 'Jan 2023', standard: 7.25, tipped: 2.13, note: 'Federal minimum wage — Indiana has no state law above federal floor' },
+      { year: 2024, date: 'Jan 2024', standard: 7.25, tipped: 2.13, note: 'Federal minimum wage — unchanged since 2009' },
+      { year: 2025, date: 'Jan 2025', standard: 7.25, tipped: 2.13, note: 'Federal minimum wage — unchanged since 2009' },
+      { year: 2026, date: 'Jan 2026', standard: 7.25, tipped: 2.13, note: 'Federal minimum wage — unchanged since 2009' },
+      { year: 2027, date: 'Jan 2027', standard: 7.25, tipped: 2.13, note: 'Estimated — assumes no federal or state change' },
+      { year: 2028, date: 'Jan 2028', standard: 7.25, tipped: 2.13, note: 'Estimated — assumes no federal or state change' },
+      { year: 2029, date: 'Jan 2029', standard: 7.25, tipped: 2.13, note: 'Estimated — assumes no federal or state change' },
+      { year: 2030, date: 'Jan 2030', standard: 7.25, tipped: 2.13, note: 'Estimated — assumes no federal or state change' },
+      { year: 2031, date: 'Jan 2031', standard: 7.25, tipped: 2.13, note: 'Estimated — assumes no federal or state change' },
+    ],
+  },
   {
     state: 'Michigan',
     color: '#1a56db', // civic blue

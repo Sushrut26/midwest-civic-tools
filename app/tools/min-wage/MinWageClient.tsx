@@ -14,9 +14,14 @@ const MinWageChart = dynamic(() => import('@/components/MinWageChart'), {
   ),
 });
 
-const ALL_STATES = ['Michigan', 'Illinois', 'Ohio'];
+const ALL_STATES = ['Indiana', 'Michigan', 'Illinois', 'Ohio'];
 
 const STATE_INFO = [
+  {
+    state: 'Indiana',
+    color: '#ff5a1f',
+    highlight: 'Indiana has no state minimum wage law above the federal floor. The federal rate of $7.25/hr has been unchanged since 2009. Tipped minimum is $2.13/hr (federal).',
+  },
   {
     state: 'Michigan',
     color: '#1a56db',
@@ -65,7 +70,7 @@ export default function MinWageClient() {
           Midwest Minimum Wage Timeline 2023–2031
         </h1>
         <p className="text-gray-600">
-          Michigan, Illinois, and Ohio wage schedules including tipped wage schedules. Data through 2031.
+          Indiana, Michigan, Illinois, and Ohio wage schedules including tipped wage schedules. Data through 2031.
         </p>
       </div>
 

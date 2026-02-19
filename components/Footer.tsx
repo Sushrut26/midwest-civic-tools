@@ -1,45 +1,78 @@
-import Link from 'next/link';
-
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200 mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Brand */}
           <div>
             <p className="font-bold text-[#1a56db] text-lg mb-2">Midwest Civic Tools</p>
             <p className="text-sm text-gray-600">
-              Free to use civic calculators and explainers for residents and small businesses.
+              Free civic calculators and explainers for residents and small businesses.
             </p>
             <p className="text-xs text-gray-500 mt-2">
-              Built with Claude Code. Not affiliated with any government agency.
+              Not affiliated with any government agency.
             </p>
           </div>
 
-          {/* Tools */}
-          <div>
-            <p className="font-semibold text-gray-700 text-sm mb-3">Tools</p>
-            <ul className="space-y-1 text-sm text-gray-600">
-              <li><Link href="/tools/benefits-cliff" className="hover:text-[#1a56db] transition-colors">Benefits Cliff Visualizer</Link></li>
-              <li><Link href="/tools/snap-checker" className="hover:text-[#1a56db] transition-colors">SNAP Eligibility Checker</Link></li>
-              <li><Link href="/tools/scholarship-calc" className="hover:text-[#1a56db] transition-colors">Choice Scholarship Calculator</Link></li>
-              <li><Link href="/tools/min-wage" className="hover:text-[#1a56db] transition-colors">Minimum Wage Timeline</Link></li>
-              <li><Link href="/tools/data-rights" className="hover:text-[#1a56db] transition-colors">Data Rights Letter Generator</Link></li>
-            </ul>
-          </div>
-
-          {/* Sources */}
+          {/* Data Sources */}
           <div>
             <p className="font-semibold text-gray-700 text-sm mb-3">Data Sources</p>
             <p className="text-xs text-gray-500 leading-relaxed">
-              Data sourced from USDA, Indiana FSSA, Indiana DOE, Michigan LEO, and Illinois DOL.
-              Benefit amounts and income thresholds are updated for 2026 as of publication.
-              Always verify with the relevant state agency for official eligibility determinations.
+              Data sourced from USDA/FNS, Indiana FSSA, Indiana DOE, Michigan LEO, Illinois DOL, Ohio BWC, and U.S. DOL.
+              Benefit amounts and income thresholds are based on publicly available 2026 information as of publication.
+              Always verify with the relevant state or federal agency for official eligibility determinations.
             </p>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
+        {/* Disclaimer block */}
+        <div className="mt-8 bg-yellow-50 border border-yellow-200 rounded-xl p-5 text-xs text-gray-600 leading-relaxed space-y-2">
+          <p className="font-semibold text-gray-800 text-sm">Important Disclaimers — Please Read</p>
+          <p>
+            <strong>Not legal or financial advice.</strong> The information on this site is provided for general
+            informational and educational purposes only. Nothing on this site constitutes legal advice, financial
+            advice, tax advice, or professional guidance of any kind. Do not rely on this site as a substitute for
+            advice from a licensed attorney, financial advisor, or government caseworker.
+          </p>
+          <p>
+            <strong>AI-generated content.</strong> The data, calculations, and text on this site were compiled with
+            the assistance of AI tools (including Claude by Anthropic). While we have made reasonable efforts to
+            verify accuracy against primary government sources, AI-generated content can contain errors, omissions,
+            or outdated information. Use at your own risk.
+          </p>
+          <p>
+            <strong>Data may change.</strong> Government benefit rules, income thresholds, wage rates, and program
+            eligibility requirements change frequently — sometimes with little public notice. The information on this
+            site reflects our best understanding of the rules as of the date of publication and may not reflect
+            recent changes. Always verify current rules directly with the relevant agency before making any decisions.
+          </p>
+          <p>
+            <strong>No guarantees.</strong> We make no representations or warranties of any kind, express or implied,
+            about the completeness, accuracy, reliability, or suitability of any information on this site. Any
+            reliance you place on this information is strictly at your own risk.
+          </p>
+          <p>
+            <strong>No government affiliation.</strong> This site is an independent, privately operated project. It
+            is not affiliated with, endorsed by, or operated by the State of Indiana, FSSA, USDA, Indiana DOE, or any
+            other government agency.
+          </p>
+          <p>
+            <strong>SNAP and benefit eligibility.</strong> SNAP eligibility decisions are made solely by your local
+            FSSA office. Item-level eligibility under Indiana&apos;s Smart SNAP waiver may vary by retailer POS
+            configuration, product labeling, and regulatory updates. When in doubt, verify with your caseworker or
+            the Indiana FSSA at{' '}
+            <a href="https://www.in.gov/fssa/dfr/" className="underline text-[#1a56db] hover:text-blue-700" target="_blank" rel="noopener noreferrer">
+              in.gov/fssa/dfr
+            </a>.
+          </p>
+          <p>
+            <strong>Data Rights letters.</strong> Letters generated by the Data Rights tool are templates only.
+            They are not legal documents and have not been reviewed by an attorney. Sending a letter does not
+            guarantee a company will respond or comply. Consult a lawyer for complex data privacy matters.
+          </p>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-gray-200 text-center text-xs text-gray-400">
           © {new Date().getFullYear()} Midwest Civic Tools. MIT License. Open source.
         </div>
       </div>

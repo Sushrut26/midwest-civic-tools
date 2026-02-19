@@ -91,12 +91,6 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              <a
-                href="/tools/snap-checker"
-                className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 rounded-xl px-5 py-3 text-sm font-semibold hover:bg-gray-50 transition-colors"
-              >
-                SNAP Checker
-              </a>
             </div>
           </div>
         </div>
