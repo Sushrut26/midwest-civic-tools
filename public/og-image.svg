@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a56db"/>
+  <!-- Bottom gradient overlay -->
+  <rect width="1200" height="630" fill="url(#grad)"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a56db" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="100" r="200" fill="white" fill-opacity="0.04"/>
+  <circle cx="150" cy="530" r="150" fill="white" fill-opacity="0.04"/>
+
+  <!-- Tag line pill -->
+  <rect x="80" y="80" width="360" height="40" rx="20" fill="white" fill-opacity="0.15"/>
+  <text x="260" y="106" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">🏛️ Indiana and Midwest civic tools</text>
+
+  <!-- Main title -->
+  <text x="80" y="220" font-family="Arial, sans-serif" font-size="62" font-weight="bold" fill="white">Midwest Civic Tools</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="290" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.85)">Free tools for Indiana &amp; Midwest residents</text>
+  <text x="80" y="330" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.85)">Updated for 2026</text>
+
+  <!-- Tool pills -->
+  <rect x="80" y="400" width="180" height="44" rx="22" fill="white" fill-opacity="0.15"/>
+  <text x="170" y="428" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">📉 Benefits Cliff</text>
+
+  <rect x="278" y="400" width="170" height="44" rx="22" fill="white" fill-opacity="0.15"/>
+  <text x="363" y="428" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">🛒 SNAP Checker</text>
+
+  <rect x="466" y="400" width="180" height="44" rx="22" fill="white" fill-opacity="0.15"/>
+  <text x="556" y="428" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">🎓 Scholarships</text>
+
+  <rect x="664" y="400" width="170" height="44" rx="22" fill="white" fill-opacity="0.15"/>
+  <text x="749" y="428" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">💵 Min Wage</text>
+
+  <rect x="852" y="400" width="160" height="44" rx="22" fill="white" fill-opacity="0.15"/>
+  <text x="932" y="428" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">🔒 Data Rights</text>
+
+  <!-- Domain -->
+  <text x="80" y="560" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.6)">midwestcivictools.app</text>
+</svg>
