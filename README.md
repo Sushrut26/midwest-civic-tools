@@ -70,35 +70,11 @@ Set the `SITE_URL` environment variable in your Vercel project settings:
 SITE_URL=https://yourdomain.com
 ```
 
-For Sentry (free tier compatible), set these environment variables in Vercel:
-```
-NEXT_PUBLIC_SENTRY_DSN=...
-NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE=0.1
-NEXT_PUBLIC_SENTRY_REPLAY_SESSION_SAMPLE_RATE=0.0
-NEXT_PUBLIC_SENTRY_REPLAY_ON_ERROR_SAMPLE_RATE=0.1
-SENTRY_ENVIRONMENT=production
-SENTRY_RELEASE=
-```
-
-Optional (only if uploading source maps to Sentry):
-```
-SENTRY_AUTH_TOKEN=...
-SENTRY_ORG=...
-SENTRY_PROJECT=...
-```
-
 ---
 
 ## Monitoring
 
-The app is wired for Sentry on client, server, and edge runtimes using:
-- `instrumentation.ts`
-- `instrumentation-client.ts`
-- `sentry.server.config.js`
-- `sentry.edge.config.js`
-- `app/global-error.tsx`
-
-If `NEXT_PUBLIC_SENTRY_DSN` is unset, Sentry remains disabled.
+No third-party error monitoring is configured by default.
 
 ---
 

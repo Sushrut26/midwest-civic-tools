@@ -18,7 +18,7 @@ test('minimum wage tool controls toggle correctly', async ({ page }) => {
 test('benefits cliff values react to income changes', async ({ page }) => {
   await page.goto('/tools/benefits-cliff');
   await page.getByLabel('Monthly gross income in dollars').fill('6000');
-  await expect(page.getByText(/SNAP not available/i)).toBeVisible();
+  await expect(page.getByText(/above.*SNAP not available/i)).toBeVisible();
 });
 
 test('snap checker search and status filters work', async ({ page }) => {
@@ -30,6 +30,7 @@ test('snap checker search and status filters work', async ({ page }) => {
 
   await page.getByRole('button', { name: '✅ Eligible' }).click();
   await expect(page.getByText('Snickers Bar')).toHaveCount(0);
+  await expect(page.getByText('No items match your search.')).toBeVisible();
 });
 
 test('scholarship calculator shows estimate after selecting county and corporation', async ({ page }) => {
@@ -37,7 +38,7 @@ test('scholarship calculator shows estimate after selecting county and corporati
 
   const countySelect = page.locator('#county-select');
   await expect.poll(async () => countySelect.locator('option').count()).toBeGreaterThan(1);
-  await countySelect.selectOption({ index: 1 });
+  await countySelect.selectOption({ index: 2 });
 
   const corpSelect = page.locator('#corp-select');
   await expect(corpSelect).toBeEnabled();
@@ -55,6 +56,7 @@ test('data rights tool generates a request letter', async ({ page }) => {
   await page.locator('#your-email').fill('jane@example.com');
   await page.locator('#your-address').fill('123 Main St, Indianapolis, IN 46201');
   await page.locator('#company-name').fill('Acme Corp');
+  await expect(page.getByRole('button', { name: 'Generate letter' })).toBeEnabled();
   await page.getByRole('button', { name: 'Generate letter' }).click();
 
   await expect(page.locator('#letter-output')).toBeVisible();
